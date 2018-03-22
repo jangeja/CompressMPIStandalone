@@ -1,0 +1,5 @@
+lz4/
+snappy/
+miniz/
+*.o
+*.a
