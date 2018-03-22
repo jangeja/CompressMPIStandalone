@@ -1,6 +1,6 @@
-#Test Send program
+# Test Send program
 
-##Instructions for running
+## Instructions for running
 
 1. You must have mpi installed
 2. Compile the program
