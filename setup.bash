@@ -14,10 +14,6 @@ fi
 # Copying all files to relevant dirs
 CUR_DIR=$PWD
 
-LIBS_TO_ADD="-Wno-error=unused-command-line-argument $CUR_DIR/miniz/miniz.o $CUR_DIR/miniz/miniz_zip.o $CUR_DIR/miniz/miniz_tinfl.o $CUR_DIR/miniz/miniz_tdef.o $CUR_DIR/snappy/libsnappyc.so.1 $CUR_DIR/lz4/lib/liblz4.a "
-
-FLAGS_TO_ADD="-Wno-error=unused-command-line-argument -I $CUR_DIR/miniz -I $CUR_DIR/snappy -I $CUR_DIR/lz4/lib "
-
 # Copy files to locations
 cp compressLib/minizMakefile miniz/Makefile
 
@@ -31,5 +27,9 @@ echo "Building miniz"
 cd miniz && make && cd ..
 cd mpi && make && make install
 
+echo "Building lib"
+cd compressLib && make && cd ..
+
 echo "ALL DONE"
-echo "run source ~/.bashrc or source ~/.bash_profile"
+echo ""
+echo "CompressMPI library is in $PWD/compressLib"
