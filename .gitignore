@@ -3,3 +3,4 @@ snappy/
 miniz/
 *.o
 *.a
+example/testSend
